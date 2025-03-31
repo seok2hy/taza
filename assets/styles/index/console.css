@@ -1,0 +1,266 @@
+@charset "UTF-8";
+
+#console {
+    border-right: 0.0625rem solid #eaecee;
+    box-shadow: 0 0 1.5rem 0.0625rem #17202a10;
+    flex-basis: 20rem;
+    flex-shrink: 0;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#console > .logo {
+    background-color: #19254d;
+    border-bottom: 0.0625rem solid #eaecee;
+    padding: 1.25rem 1.5rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#console > .logo > .image {
+    height: 1rem;
+    filter: invert(1);
+}
+
+#console > .logo > .caption {
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-left: 1.5rem;
+    position: relative;
+}
+
+#console > .logo > .caption::before {
+    top: 50%;
+    left: -0.75rem;
+    width: 0.012rem;
+    height: 1rem;
+    background-color: #566573;
+    content: '';
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+#console > .location-form {
+    border-bottom: 0.0625rem solid #eeeeee;
+    padding: 1rem 1.5rem;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+
+#console > .location-form > .label {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: flex-start;
+}
+
+#console > .location-form > .label > .caption {
+    color: #566573;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+#console > .location-form > .label > .row {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    justify-content: flex-start;
+}
+
+#console > .location-form > .label > .row > .button {
+    position: relative;
+}
+
+#console > .location-form > .label > .row > .button > .icon {
+    height: 1.125rem;
+    filter: opacity(0.5);
+    transition-duration: 125ms;
+    transition-property: filter;
+    transition-timing-function: ease;
+}
+
+#console > .location-form > .label > .row > .button:hover > .icon {
+    filter: opacity(1);
+}
+
+#console > .location-form > .label > .row > .button > .tooltip {
+    top: 100%;
+    left: 50%;
+    background-color: #19254d;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    font-size: 0.75rem;
+    opacity: 0;
+    padding: 0.375rem 0.425rem;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+    transition-duration: 125ms;
+    transition-property: top, opacity;
+    transition-timing-function: ease;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+#console > .location-form > .label > .row > .button:hover > .tooltip {
+    top: calc(100% + 0.25rem);
+    opacity: 1;
+}
+
+#console > .estimate {
+    border-bottom: 0.0625rem solid #eeeeee;
+    display: none;
+    padding: 1rem 1.5rem;
+
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+#console > .estimate.visible {
+    display: flex;
+}
+
+#console > .estimate > .car {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#console > .estimate > .car > .label {
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 1rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+#console > .estimate > .car > .label:has(>.radio:checked) {
+    outline: 0.125rem solid #17202a;
+}
+
+#console > .estimate > .car > .label > .radio {
+    display: none;
+}
+
+#console > .estimate > .car > .label > .icon {
+    width: 70%;
+    margin: -0.5rem 0;
+}
+
+#console > .estimate > .car > .label > .caption {
+    color: #424242;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#console > .estimate > .car > .label > .capacity {
+    color: #757575;
+    font-size: 0.85rem;
+}
+
+#console > .estimate > .text-container {
+    color: #757575;
+    font-size: 0.85rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#console > .estimate > .text-container > .text > .value {
+    color: #17202a;
+    font-weight: 600;
+}
+
+#console > .route {
+    flex-grow: 1;
+    list-style-type: none;
+    margin-block: 0;
+    margin-inline: 0;
+    overflow: hidden auto;
+    padding-inline: 0;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#console > .route > .message {
+    color: #757575;
+    display: none;
+    flex-grow: 1;
+    line-height: 1.5;
+    padding: 3.75rem;
+    text-align: center;
+
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#console > .route > .message.visible {
+    display: flex;
+}
+
+#console > .route > .item {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    justify-content: flex-start;
+}
+
+#console > .route > .item:not(:last-child) {
+    border-bottom: 0.0625rem solid #eeeeee;
+}
+
+#console > .route > .item > .guidance {
+    color: #757575;
+    font-size: 0.85rem;
+}
+
+#console > .pay {
+    background-color: #17202a;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+#console > .pay.visible {
+    display: block;
+}
+
+
+
+
+
+

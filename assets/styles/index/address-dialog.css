@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+#addressDialog {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #17202aa0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    transition-duration: 125ms;
+    transition-property: opacity;
+    transition-timing-function: ease;
+    z-index: 2;
+}
+
+#addressDialog.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#addressDialog > .content {
+    top: calc(50% + 0.25rem);
+    left: 50%;
+    width: 23.75rem;
+    height: 30rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1.5rem 0.0625rem #17202a25;
+    overflow: hidden;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition-duration: 125ms;
+    transition-property: top;
+    transition-timing-function: ease;
+}
+
+#addressDialog.visible > .content {
+    top: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

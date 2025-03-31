@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+@import "./index/address-dialog.css";
+@import "./index/console.css";
+@import "./index/dialog.css";
+@import "./index/history-dialog.css";
+@import "./index/map.css";
+@import "./index/pay-dialog.css";
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#nav {
+    top: 0.75rem;
+    right: 0.75rem;
+    position: fixed;
+    z-index: 2;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}

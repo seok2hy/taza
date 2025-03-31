@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+#historyDialog {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #17202aa0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    transition-duration: 125ms;
+    transition-property: opacity;
+    z-index: 2;
+}
+
+#historyDialog.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#historyDialog > .content {
+    top: 50%;
+    left: 50%;
+    min-width: 25rem;
+    max-width: calc(100% - 2rem);
+    max-height: calc(100% - 2rem);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    position: absolute;
+    transform: scale(97.5%) translate(-50%, -50%);
+    transition-duration: 125ms;
+    transition-property: transform;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#historyDialog.visible > .content {
+    transform: scale(100%) translate(-50%, -50%);
+}
+
+#historyDialog > .content > .title {
+    border-bottom: 0.0625rem solid #eeeeee;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-block: 0;
+    margin-inline: 0;
+    padding: 1rem 1.25rem;
+}
+
+#historyDialog > .content > .list {
+    list-style-type: none;
+    margin-block: 0;
+    margin-inline: 0;
+    overflow: hidden auto;
+    padding-inline: 0;
+    padding: 1rem 1.25rem;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    justify-content: flex-start;
+}
+
+#historyDialog > .content > .list > .message {
+    color: #757575;
+    display: none;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+#historyDialog > .content > .list > .message.visible {
+    display: block;
+}
+
+#historyDialog > .content > .list > .item {
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    padding: 0.75rem 0.875rem;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: flex-start;
+}
+
+#historyDialog > .content > .list > .item > .timestamp {
+    color: #757575;
+    font-size: 0.75rem;
+}
+
+#historyDialog > .content > .list > .item > .detail {
+    white-space: nowrap;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.375rem;
+    justify-content: flex-start;
+}
+
+#historyDialog > .content > .list > .item > .detail > .arrow {
+    color: #9e9e9e;
+    font-size: 1.25rem;
+    margin: 0 0.25rem;
+}
+
+#historyDialog > .content > .list > .item > .detail > .stretch {
+    min-width: 1rem;
+    flex-grow: 1;
+}
+
+#historyDialog > .content > .list > .item > .detail > .charge {
+    background-color: #19254d;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.375rem;
+}
+
+#historyDialog > .content > .button-container {
+    border-top: 0.0625rem solid #eeeeee;
+    padding: 0.75rem 1.25rem;
+
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

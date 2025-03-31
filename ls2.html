@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로컬 스토리지 예제 - 로그인</title>
+</head>
+<body>
+<form>
+    <label>
+        <input name="id" placeholder="아이디" type="text">
+    </label>
+    <br>
+    <label>
+        <input name="pw" placeholder="비밀번호" type="password">
+    </label>
+    <br>
+    <label>
+        <input name="rem" type="checkbox"> 계정 정보를 기억할까요?
+    </label>
+    <br>
+    <button type="submit">로그인</button>
+</form>
+<script>
+    const $form = document.body.querySelector(':scope > form');
+    $form.onsubmit = () => {
+        if ($form['rem'].checked === true) {
+            localStorage.setItem('remAcc', JSON.stringify({
+                id: $form['id'].value,
+                pw: $form['pw'].value
+            }));
+        } else {
+            localStorage.removeItem('remId');
+        }
+    };
+
+    if (localStorage.getItem('remAcc') != null) {
+        const remAcc = JSON.parse(localStorage.getItem('remAcc'));
+        $form['id'].value = remAcc['id'];
+        $form['pw'].value = remAcc['pw'];
+        $form['rem'].checked = true;
+    }
+</script>
+</body>
+</html>
